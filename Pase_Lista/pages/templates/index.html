@@ -20,7 +20,7 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <title>Dashboard - Templune</title>
+    <title>Pase de Lista</title>
 </head>
 
 <body>
@@ -32,15 +32,12 @@
                 <h4 class="text-light font-weight-bold mb-0"> <a href="/"> Pase de Lista </a></h4>
             </div>
             <div class="menu">
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                <a href="{% url 'materia' %}" class="d-block text-light p-3 border-0 active"><i class="icon ion-md-apps lead mr-2"></i>
                     Materias</a>
-
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
-                    Grupos</a>
-                
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
+                <a href="{% url 'clase' %}" class="d-block text-light p-3 border-0 active"><i class="icon ion-md-apps lead mr-2"></i>
+                    Clases</a>
+                <a href="{% url 'alumno' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
                     Alumnos</a>
-
                 <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
                     Perfil</a>
             </div>
@@ -54,14 +51,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Bienvenido Diego</h1>
+                            <h1 class="font-weight-bold mb-0">Bienvenido!</h1>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <div> <a> Poner botón de pase de lista </a> </div>
-            
+            <div>
+                <p>Comienza a pasar lista de forma casi automática!</p>
+            </div>
         </div>
 
         </div>
