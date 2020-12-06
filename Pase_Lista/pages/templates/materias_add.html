@@ -56,16 +56,13 @@
                     </div>
                 </div>
             </section>
-            <div>
-                <h2>Clases</h2>
-                {% for clss in clases %}
-                    <ul>
-                        <li>{{ clss }}</li>
-                    </ul>
-                {%endfor%}
-            </div>
-            <div>
-                <a class="btn btn-primary" href="{% url 'claseAdd' %}">Añadir una nueva clase</a>
+            <div class="container">
+                <h3>Añade una nueva materia</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_ul}}
+                </form>
+                <button type="submit" class="btn btn-primary">Guardar materia</button>
             </div>
         </div>
 

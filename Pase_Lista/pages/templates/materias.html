@@ -60,9 +60,12 @@
                 <h2>Materias</h2>
                 {% for mat in materias %}
                     <ul>
-                        <li>{{ mat }}</li>
+                        <li><a href="{% url 'materiaUpdt' mat.id %}"></a>{{ mat }}</li>
                     </ul>
                 {%endfor%}
+            </div>
+            <div>
+                <a class="btn btn-primary" href="{% url 'materiaAdd' %}">Añadir una nueva materia</a>
             </div>
         </div>
 
