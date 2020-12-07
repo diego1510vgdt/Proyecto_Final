@@ -58,20 +58,13 @@
                     </div>
                 </div>
             </section>
-            <div>
-                <h2>Materias</h2>
-                {% for mat in materias %}
-                    <ul>
-                        <li>
-                            <a href="{% url 'materiaUpdt' mat.id %}">
-                                {{ mat }}
-                            </a>
-                        </li>
-                    </ul>
-                {%endfor%}
-            </div>
-            <div>
-                <a class="btn btn-primary" href="{% url 'materiaAdd' %}">Añadir una nueva materia</a>
+            <div class="container">
+                <h3>Añade una nueva asistencia</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_ul}}
+                    <button type="submit" class="btn btn-primary">Guardar asistencia</button>
+                </form>
             </div>
         </div>
 

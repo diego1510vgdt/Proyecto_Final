@@ -59,19 +59,15 @@
                 </div>
             </section>
             <div>
-                <h2>Materias</h2>
-                {% for mat in materias %}
+                <h2>Profesores</h2>
+                {% for prof in profesores %}
                     <ul>
-                        <li>
-                            <a href="{% url 'materiaUpdt' mat.id %}">
-                                {{ mat }}
-                            </a>
-                        </li>
+                        <li>{{ prof }}</li>
                     </ul>
                 {%endfor%}
             </div>
             <div>
-                <a class="btn btn-primary" href="{% url 'materiaAdd' %}">Añadir una nueva materia</a>
+                <a class="btn btn-primary" href="{% url 'profesorAdd' %}">Añadir un nuevo profesor</a>
             </div>
         </div>
 

@@ -75,10 +75,142 @@ class ClssAdd(View):
             context = {'form': form}
             return render(request, 'clases_add.html', context)
 
+class ClssUpdt(View):
+    def get(self, request):
+        clase = Clase.objects.get(id=id)
+        form = ClaseForm(instance=clase)
+        context = {'form': form}
+        return render(request, 'clases_add.html', context)
+    
+    def post(self,request):
+        clase = Clase.objects.get(id=id)
+        form = ClaseForm(request.POST, instance=clase)
+        if form.is_valid():
+            form.save()
+            return redirect('clase')
+        else:
+            context = {'form': form}
+            return render(request, 'clases_add.html', context)
+
 class Alm(View):
     def get(self, request):
         alumnos = Alumno.objects.all()
         for al in alumnos:
             print(al)
-        context = {'clases' : alumnos}
+        context = {'alumnos' : alumnos}
         return render(request, 'alumno.html', context)
+
+class AlmAdd(View):
+    def get(self, request):
+        form = AlumnoForm()
+        context = {'form': form}
+        return render(request, 'alumno_add.html', context)
+    
+    def post(self,request):
+        form = AlumnoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('alumno')
+        else:
+            form = AlumnoForm()
+            context = {'form': form}
+            return render(request, 'alumno_add.html', context)
+
+class AlmUpdt(View):
+    def get(self, request):
+        alumno = Alumno.objects.get(id=id)
+        form = AlumnoForm(instance=alumno)
+        context = {'form': form}
+        return render(request, 'alumno_add.html', context)
+    
+    def post(self,request):
+        alumno = Alumno.objects.get(id=id)
+        form = AlumnoForm(request.POST, instance=alumno)
+        if form.is_valid():
+            form.save()
+            return redirect('alumno')
+        else:
+            context = {'form': form}
+            return render(request, 'alumno_add.html', context)
+
+class Prof(View):
+    def get(self, request):
+        profesores = Profesor.objects.all()
+        for prof in profesores:
+            print(prof)
+        context = {'profesores' : profesores}
+        return render(request, 'profesor.html', context)
+
+class ProfAdd(View):
+    def get(self, request):
+        form = ProfesorForm()
+        context = {'form': form}
+        return render(request, 'profesor_add.html', context)
+    
+    def post(self,request):
+        form = AlumnoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profesor')
+        else:
+            form = ProfesorForm()
+            context = {'form': form}
+            return render(request, 'profesor_add.html', context)
+
+class ProfUpdt(View):
+    def get(self, request):
+        profesor = Profesor.objects.get(id=id)
+        form = ProfesorForm(instance=profesor)
+        context = {'form': form}
+        return render(request, 'profesor_add.html', context)
+    
+    def post(self,request):
+        profesor = Profesor.objects.get(id=id)
+        form = AlumnoForm(request.POST, instance=profesor)
+        if form.is_valid():
+            form.save()
+            return redirect('profesor')
+        else:
+            context = {'form': form}
+            return render(request, 'profesor_add.html', context)
+
+class Asis(View):
+    def get(self, request):
+        asistencias = Asistencia.objects.all()
+        for asis in asistencias:
+            print(asis)
+        context = {'asistencias' : asistencias}
+        return render(request, 'asistencia.html', context)
+
+class AsisAdd(View):
+    def get(self, request):
+        form = AsistenciaForm()
+        context = {'form': form}
+        return render(request, 'asistencia_add.html', context)
+    
+    def post(self,request):
+        form = AsistenciaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('asistencia')
+        else:
+            form = AsistenciaForm()
+            context = {'form': form}
+            return render(request, 'asistencia_add.html', context)
+
+class AsisUpdt(View):
+    def get(self, request):
+        asistencia = Asistencia.objects.get(id=id)
+        form = AsistenciaForm(instance=asistencia)
+        context = {'form': form}
+        return render(request, 'asistencia_add.html', context)
+    
+    def post(self,request):
+        asistencia = Asistencia.objects.get(id=id)
+        form = AsistenciaForm(request.POST, instance=asistencia)
+        if form.is_valid():
+            form.save()
+            return redirect('asistencia')
+        else:
+            context = {'form': form}
+            return render(request, 'asistencia_add.html', context)
